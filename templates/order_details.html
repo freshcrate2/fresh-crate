@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #004d00;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f1f1f1;
+            color: #004d00;
+        }
+
+        td {
+            background-color: #fafafa;
+        }
+
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 20px;
+        }
+
+        .order-summary {
+            margin-bottom: 20px;
+        }
+
+        .order-summary p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .order-summary strong {
+            color: #004d00;
+        }
+
+        .thank-you {
+            font-size: 18px;
+            color: #2ecc71;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .total {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .order-summary p {
+                font-size: 14px;
+            }
+
+            .total {
+                font-size: 14px;
+            }
+
+            .thank-you {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Order Confirmation</h1>
+            
+            <h2>Delivery Information</h2>
+            <div class="order-summary">
+                <p><strong>Name:</strong> {{ delivery.name }}</p>
+                <p><strong>Address:</strong> {{ delivery.flat_no }}, {{ delivery.building }}, {{ delivery.street }}, {{ delivery.city }}, {{ delivery.state }} - {{ delivery.pincode }}</p>
+                <p><strong>Phone:</strong> {{ delivery.phone }}</p>
+            </div>
+
+            <h2>Cart Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_details %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.price * item.quantity }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="total">
+                <p>Total Order Amount: ₹{{ total_cost }}</p>
+            </div>
+
+            <div class="thank-you">
+                <p>Thank you for your order!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

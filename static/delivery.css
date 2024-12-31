@@ -1,0 +1,126 @@
+/* Basic styling for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Styling for the heading */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 20px;
+    font-size: 32px; /* Adjusted for better visibility */
+}
+
+/* Form container */
+form {
+    background-color: #fff;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 600px; /* Increased max-width for larger screens */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Smooth transition for responsiveness */
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* Input Styling */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px; /* Adjusted for clarity */
+}
+
+/* Button Styling */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px; /* Slightly larger font size */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    form {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px; /* Adjusted for medium screens */
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px; /* Adjusted for small screens */
+    }
+
+    form {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        font-size: 14px; /* Slightly smaller font size on very small screens */
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
