@@ -113,7 +113,23 @@ def setup():
         Product(name="Curd 1kg", price=80.0),
         Product(name="Curd 1/2kg", price=40.0)
     ]
-    db.session.add_all(products + fruits + meals + bevarages + dairy)
+
+    snack = [
+        Product(name="Punukulu", price=30.0)
+    ]
+    tiffins = [
+        Product(name="Idly", price=30.0),
+        Product(name="Vada", price=30.0)
+    ]
+    biryanis = [
+        Product(name="Chicken Dum Biryani", price=150.0),
+        Product(name="Chicken Fry Biryani", price=150.0)
+    ]
+    pickle = [
+        Product(name="Chicken Pickle", price=30.0),
+        Product(name="Tomato Pickle", price=30.0)
+    ]
+    db.session.add_all(products + fruits + meals + bevarages + dairy + snack + tiffins + biryanis + pickle)
     db.session.commit()
 
 
@@ -166,6 +182,16 @@ def fruit():
     
     return render_template('index.html', products=fruits)
 
+@app.route('/snack')
+def snack():
+    # List of known fruit names
+    snack_names = ["Punukulu"]  # Add more fruit names as needed
+    
+    # Query products that match any of the fruit names
+    snacks = Product.query.filter(Product.name.in_(snack_names)).all()
+    
+    return render_template('index.html', products=snacks)
+
 @app.route('/dairys')
 def dairys():
     # List of known fruit names
@@ -175,6 +201,36 @@ def dairys():
     dairy = Product.query.filter(Product.name.in_(dairy_names)).all()
     
     return render_template('index.html', products=dairy)
+
+@app.route('/tiffins')
+def tiffins():
+    # List of known fruit names
+    tiffin_names = ["Idly", "Vada"]  # Add more fruit names as needed
+    
+    # Query products that match any of the fruit names
+    tiffin = Product.query.filter(Product.name.in_(tiffin_names)).all()
+    
+    return render_template('index.html', products=tiffin)
+
+@app.route('/pickle')
+def pickle():
+    # List of known fruit names
+    pickles_names = ["Chicken Pickle", "Tomato Pickle"]  # Add more fruit names as needed
+    
+    # Query products that match any of the fruit names
+    pickle = Product.query.filter(Product.name.in_(pickles_names)).all()
+    
+    return render_template('index.html', products=pickle)
+
+@app.route('/biryanis')
+def biryanis():
+    # List of known fruit names
+    biryani_names = ["Chicken Dum Biryani", "Chicken Fry Biryani"]  # Add more fruit names as needed
+    
+    # Query products that match any of the fruit names
+    biryanis = Product.query.filter(Product.name.in_(biryani_names)).all()
+    
+    return render_template('index.html', products=biryanis)
 
 @app.route('/meal')
 def meal():
