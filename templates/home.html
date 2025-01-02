@@ -21,6 +21,10 @@
             <li><a href="#Vegetables">Vegetables</a></li>
             <li><a href="#Dairy">Dairy</a></li>
             <li><a href="#Beverages">Beverages</a></li>
+            <li><a href="#Snacks">Snacks</a></li>
+            <li><a href="#Pickles">Snacks</a></li>
+            <li><a href="#Biryani">Snacks</a></li>
+            <li><a href="#Tiffin">Snacks</a></li>
         </ul>
     </nav>
 
@@ -64,6 +68,35 @@
             <h3 id="Beverages">Beverages</h3>
             <p>All Beverages available</p>
             <button onclick="window.location.href='{{ url_for('bevarage') }}';">Shop Now</button>
+        </div>
+
+
+        <div class="category-card">
+            <img src="snacks.jpg" alt="Snacks">
+            <h3 id="Snacks">Snacks</h3>
+            <p>All Snacks available</p>
+            <button onclick="window.location.href='{{ url_for('snack') }}';">Shop Now</button>
+        </div>
+
+        <div class="category-card">
+            <img src="pickles.jpg" alt="Pickles">
+            <h3 id="Pickles">Pickles</h3>
+            <p>All Pickles available</p>
+            <button onclick="window.location.href='{{ url_for('pickle') }}';">Shop Now</button>
+        </div>
+
+        <div class="category-card">
+            <img src="biryani.jpg" alt="Biryani">
+            <h3 id="Biryani">Biryani</h3>
+            <p>All Birynais available</p>
+            <button onclick="window.location.href='{{ url_for('biryanis') }}';">Shop Now</button>
+        </div>
+
+        <div class="category-card">
+            <img src="tiffin.jpg" alt="Tiffin">
+            <h3 id="Tiffin">Tiffin</h3>
+            <p>All Tiffin available</p>
+            <button onclick="window.location.href='{{ url_for('tiffins') }}';">Shop Now</button>
         </div>
     </section>
 
