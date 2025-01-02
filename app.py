@@ -123,7 +123,8 @@ def setup():
     ]
     biryanis = [
         Product(name="Chicken Dum Biryani", price=150.0),
-        Product(name="Chicken Fry Biryani", price=150.0)
+        Product(name="Chicken Fry Biryani", price=150.0),
+        Product(name="Chicken Mughalai Biryani", price=200.0)
     ]
     pickle = [
         Product(name="Chicken Pickle", price=30.0),
