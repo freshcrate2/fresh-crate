@@ -70,7 +70,7 @@ def setup():
 
     # Add initial products (same as before)
     products = [
-        Product(name="Tomatoes", price=20.0),
+        Product(name="Tomatoes - 1KG", price=20.0),
         Product(name="Potatoes", price=10.0),
         Product(name="Onions", price=15.0),
         Product(name="Carrots", price=25.0),
@@ -127,7 +127,8 @@ def setup():
     ]
     pickle = [
         Product(name="Chicken Pickle", price=30.0),
-        Product(name="Tomato Pickle", price=30.0)
+        Product(name="Tomato Pickle", price=30.0),
+        Product(name="Amla Pickle", price=20.0)
     ]
     db.session.add_all(products + fruits + meals + bevarages + dairy + snack + tiffins + biryanis + pickle)
     db.session.commit()
@@ -167,7 +168,7 @@ def home():
 @app.route('/index')
 def index():
     # Query all products (you can add more filtering conditions if needed)
-    products_names = [ "Tomatoes", "Potatoes", "Onions", "Carrots", "Ladies Finger", "Cabbage",  "Cauliflower", "Spinach", "Broccoli", "Mushrooms", "Capsicum", "Green Chilies",  "Peas", "Cucumber", "Garlic", "Ginger", "Beetroot", "Radish", "Pumpkin", "Bottle Gourd", "Bitter Gourd"]
+    products_names = [ "Tomatoes - 1KG", "Potatoes", "Onions", "Carrots", "Ladies Finger", "Cabbage",  "Cauliflower", "Spinach", "Broccoli", "Mushrooms", "Capsicum", "Green Chilies",  "Peas", "Cucumber", "Garlic", "Ginger", "Beetroot", "Radish", "Pumpkin", "Bottle Gourd", "Bitter Gourd"]
     products = Product.query.filter(Product.name.in_(products_names)).all()
     
     return render_template('index.html', products=products)
@@ -215,7 +216,7 @@ def tiffins():
 @app.route('/pickle')
 def pickle():
     # List of known fruit names
-    pickles_names = ["Chicken Pickle", "Tomato Pickle"]  # Add more fruit names as needed
+    pickles_names = ["Chicken Pickle", "Tomato Pickle", "Amla Pickle"]  # Add more fruit names as needed
     
     # Query products that match any of the fruit names
     pickle = Product.query.filter(Product.name.in_(pickles_names)).all()
@@ -316,7 +317,7 @@ def delivery():
 
         # Calculate the total cost and shipping charges
         total_cost = sum(item['price'] * item['quantity'] for item in cart_items)
-        shipping_charge = 10.0
+        shipping_charge = 20.0
         total_order_amount = total_cost + shipping_charge
 
         # Save delivery details to the database
