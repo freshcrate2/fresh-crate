@@ -227,7 +227,7 @@ def pickle():
 @app.route('/biryanis')
 def biryanis():
     # List of known fruit names
-    biryani_names = ["Chicken Dum Biryani", "Chicken Fry Biryani"]  # Add more fruit names as needed
+    biryani_names = ["Chicken Dum Biryani", "Chicken Fry Biryani", "Chicken Mughalai Biryani"]  # Add more fruit names as needed
     
     # Query products that match any of the fruit names
     biryanis = Product.query.filter(Product.name.in_(biryani_names)).all()
