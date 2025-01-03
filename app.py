@@ -70,27 +70,27 @@ def setup():
 
     # Add initial products (same as before)
     products = [
-        Product(name="Tomatoes - 1KG", price=20.0),
-        Product(name="Potatoes", price=10.0),
-        Product(name="Onions", price=15.0),
-        Product(name="Carrots", price=25.0),
-        Product(name="Ladies Finger", price=30.0),
-        Product(name="Cabbage", price=18.0),
-        Product(name="Cauliflower", price=22.0),
+        Product(name="Tomatoes - 1KG", price=25.0),
+        Product(name="Potatoes - 1kg", price=40.0),
+        Product(name="Onions - 1kg", price=40.0),
+        Product(name="Carrots - 500gm", price=40.0),
+        Product(name="Ladies Fingern - 500gm", price=30.0),
+        Product(name="Cabbage - 500gm", price=25.0),
+        Product(name="Cauliflower", price=30.0),
         Product(name="Spinach", price=12.0),
         Product(name="Broccoli", price=40.0),
-        Product(name="Mushrooms", price=50.0),
-        Product(name="Capsicum", price=35.0),
-        Product(name="Green Chilies", price=15.0),
-        Product(name="Peas", price=28.0),
-        Product(name="Cucumber", price=12.0),
-        Product(name="Garlic", price=60.0),
-        Product(name="Ginger", price=50.0),
-        Product(name="Beetroot", price=20.0),
-        Product(name="Radish", price=18.0),
-        Product(name="Pumpkin", price=25.0),
-        Product(name="Bottle Gourd", price=15.0),
-        Product(name="Bitter Gourd", price=30.0)
+        Product(name="Mushrooms - 1packet", price=50.0),
+        Product(name="Capsicum - 500gm", price=40.0),
+        Product(name="Green Chilies - 250gm", price=20.0),
+        Product(name="green Peas - 250gm ", price=30.0),
+        Product(name="Cucumber - 500gm", price=25.0),
+        Product(name="Garlic -250gm", price=80.0),
+        Product(name="Ginger - 250gm", price=30.0),
+        Product(name="Beetroot - 500gm", price=30.0),
+        Product(name="Radish - 500gm", price=20.0),
+        Product(name="Pumpkin - 500gm", price=25.0),
+        Product(name="Bottle Gourd - 1 piece", price=30.0),
+        Product(name="Bitter Gourd - 500gm", price=30.0)
     ]
 
     fruits = [
@@ -170,7 +170,7 @@ def home():
 @app.route('/index')
 def index():
     # Query all products (you can add more filtering conditions if needed)
-    products_names = [ "Tomatoes - 1KG", "Potatoes", "Onions", "Carrots", "Ladies Finger", "Cabbage",  "Cauliflower", "Spinach", "Broccoli", "Mushrooms", "Capsicum", "Green Chilies",  "Peas", "Cucumber", "Garlic", "Ginger", "Beetroot", "Radish", "Pumpkin", "Bottle Gourd", "Bitter Gourd"]
+    products_names = [ "Tomatoes - 1KG", "Potatoes - 1kg", "Onions - 1kg", "Carrots - 500gm", "Ladies Finger - 500gm", "Cabbage - 500gm",  "Cauliflower", "Spinach", "Broccoli", "Mushrooms - 1packet", "Capsicum - 500gm", "Green Chilies - 250",  "Peas - 250gm", "Cucumber - 500gm", "Garlic - 250gm", "Ginger - 250gm", "Beetroot - 500gm", "Radish - 500gm", "Pumpkin - 250gm", "Bottle Gourd - 1piece", "Bitter Gourd - 500gm"]
     products = Product.query.filter(Product.name.in_(products_names)).all()
     
     return render_template('index.html', products=products)
