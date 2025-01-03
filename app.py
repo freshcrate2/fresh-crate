@@ -115,7 +115,8 @@ def setup():
     ]
 
     snack = [
-        Product(name="Punukulu", price=30.0)
+        Product(name="Punukulu", price=30.0),
+        Product(name="mirchi bajji", price=30.0)
     ]
     tiffins = [
         Product(name="Idly", price=30.0),
@@ -187,7 +188,7 @@ def fruit():
 @app.route('/snack')
 def snack():
     # List of known fruit names
-    snack_names = ["Punukulu"]  # Add more fruit names as needed
+    snack_names = ["Punukulu","mirchi bajji"]  # Add more fruit names as needed
     
     # Query products that match any of the fruit names
     snacks = Product.query.filter(Product.name.in_(snack_names)).all()
